@@ -1,0 +1,33 @@
+.logo-dark {
+    display: block;
+    width: 200px;
+    height: 43px;
+    text-indent: -9999px;
+    background-image: url(http://www.landsend.com/pps/static/assets/images/global-header/LE_COMFY_LOGO_DesktopNavy.svg);
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+.promo-banner {
+    color: #fff;
+    background-color: #0c2340;
+    max-height: 300px;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.order-form {
+    margin: 20px;
+   
+    &-footer a {
+        padding: 10px;
+        margin: 20px
+    }
+}
+
+.dialog {
+    &-footer a {
+        padding: 10px;
+        margin: 20px
+    }
+}

@@ -1,0 +1,35 @@
+<span class="logo-dark">LANDS' END</span>
+<div class="promo-banner">Get up to 100% off!</div>
+
+<div *ngIf="!displayConfirm; else confirmScreen" class="order-form">
+  <form [formGroup]="orderForm">
+    <strong>Customer:</strong> <i> {{customerName}}</i><br />
+    <hr>
+    <h4>Choose from these items:</h4>
+    <div *ngIf="saleItems">
+      <div *ngFor="let item of saleItems; index as i">
+        <div style="border: #d2d2d2 solid 1px; margin:5px; padding: 5px; max-width: 300px">
+          {{item.title}} - {{item.price | currency}}
+          <p style="margin:10px;">Quantity: <input formControlName={{item.id}} type="text" placeholder="0" /></p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="order-form-footer">
+      <button [disabled] = "!isValid" class="btn btn-primary" (click)="orderIt()">Place Order</button>
+      <a class="btn btn-info" [routerLink]="['/order']">View Orders</a>
+    </div>
+  </form>
+</div>
+
+<ng-template #confirmScreen>
+  <div class="dialog order-form">
+    <div class="title">Order Successful!</div>
+    <div class="warning">Your order has been placed.</div>
+    <div class="dialog-footer">
+      <button class="btn btn-primary" (click)="resetOrderForm()">Order more</button>
+      <a class="btn btn-info" [routerLink]="['/order']">View Orders</a>
+    </div>
+  </div>
+</ng-template>

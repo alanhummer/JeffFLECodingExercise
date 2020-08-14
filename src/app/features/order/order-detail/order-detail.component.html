@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Order Detail</h1>
+      <div>
+          Id: {{ order?.id }}
+      </div>
+      <div>
+          TimeStamp: {{ order?.timestamp }}
+      </div>
+      <div>
+          Total: {{ order?.total | currency: 'USD': 'symbol-narrow' }}
+      </div>
+      <div>
+          Customer: {{ order?.customer }}
+      </div>
+      <div>
+          Items: {{ order?.items.length }}
+      </div>
+      <button type="button" class="btn btn-primary" (click)="navigateBack()">Back</button>
+    </div>
+  </div>
+</div>
